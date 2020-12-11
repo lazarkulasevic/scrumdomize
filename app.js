@@ -1,5 +1,5 @@
-import db from './config.js';
-import {pass} from './config.js';
+import db from './config/config.js';
+import {pass} from './config/config.js';
 
 const base = db.collection('scrumdomize');
 
