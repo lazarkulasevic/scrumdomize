@@ -1,4 +1,6 @@
 import db from './config.js';
+import {pass} from './config.js';
+
 const base = db.collection('scrumdomize');
 
 const form = document.getElementById('form');
@@ -46,7 +48,6 @@ numbers.addEventListener('click', event => {
 }, {once: true});
 
 repeat.addEventListener('click', () => {
-	import {pass} from './config.js';
 	if (prompt('Enter password: ') == pass) {
 		repeatProcess();
 	} else {
