@@ -1,0 +1,86 @@
+body {
+  	background-color: #2c2b2b;
+}
+
+h1 {
+  	color: #eee;
+}
+
+input {
+  	background-color: #313131;
+	padding: 10px;
+	outline: none;
+	border: none;
+	border-radius: 3px;
+	font-size: 20px;
+}
+
+input[type=text] {
+	box-shadow: inset 1px 1px 2px #4d4d4d, inset -1px -1px 2px #111111;
+}
+
+input[type=submit], #repeat {
+	padding: 10px 20px;
+	color: #eee;
+	font-weight: bold;
+	box-shadow: inset 1px 1px 2px #4d4d4d, inset -1px -1px 2px #111111;
+	cursor: pointer;
+}
+
+input[type=submit]:hover, #repeat:hover {
+	background-color: #3b3b3b;
+}
+
+.numbers {
+	visibility: hidden;
+}
+
+.num {
+	display: inline-block;
+	border-radius: 3px;
+	padding: 10px 16px;
+	margin: 5px;
+	background-color: #313131;
+	color: #eee;
+	cursor: pointer;
+}
+
+.num:not(.selected) {
+	box-shadow: inset 1px 1px 2px #4d4d4d, inset -1px -1px 2px #111111;
+}
+
+.selected {
+	background-color: #fcfc30;
+	color: black;
+	cursor: not-allowed;
+}
+
+#user {
+  	color: white;
+}
+
+#users {
+  	color: #eee;
+}
+
+#users td {
+	text-align: center;
+	margin: 0;
+	padding: 10px 20px;
+	border: 1px solid #f0f06a;
+}
+
+#users td:last-child {
+	background-color: #fcfc30;
+	color: #000000;
+}
+
+.scrummer td {
+	background-color: #30ccfc !important;
+	border-color: #30ccfc !important;
+	color: #000000;
+}
+
+#repeat {
+	margin: 20px;
+}
