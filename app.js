@@ -1,14 +1,14 @@
-let configuration = {
-	apiKey: config.apiKey,
-	authDomain: config.authDomain,
-	projectId: config.projectId,
-	storageBucket: config.storageBucket,
-	messagingSenderId: config.messagingSenderId,
-	appId: config.appId,
-	pass: config.pass
+var config = {
+	apiKey: "AIzaSyC5GnKMLQNaFin_doJVJGKH7wtxjjseOtU",
+	authDomain: "scrumdomize.firebaseapp.com",
+	projectId: "scrumdomize",
+	storageBucket: "scrumdomize.appspot.com",
+	messagingSenderId: "115144458232",
+	appId: "1:115144458232:web:5db83767db4aaf91a5200d",
+	pass: "scrum"
 };
 
-firebase.initializeApp(configuration);
+firebase.initializeApp(config);
 
 let db = firebase.firestore();
 
