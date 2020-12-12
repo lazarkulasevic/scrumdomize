@@ -82,5 +82,6 @@ input[type=submit]:hover, #repeat:hover {
 }
 
 #repeat {
+	display: none;
 	margin: 20px;
 }

@@ -76,6 +76,7 @@ async function getSelected() {
 			}
 
 			if (snapshot.size == 10) {
+				repeat.style.display = "block";
 				scrumdomize();
 			}
 		});
