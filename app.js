@@ -1,5 +1,16 @@
-import db from './config/config.js';
-import {pass} from './config/config.js';
+let configuration = {
+	apiKey: config.apiKey,
+	authDomain: config.authDomain,
+	projectId: config.projectId,
+	storageBucket: config.storageBucket,
+	messagingSenderId: config.messagingSenderId,
+	appId: config.appId,
+	pass: config.pass
+};
+
+firebase.initializeApp(configuration);
+
+let db = firebase.firestore();
 
 const base = db.collection('scrumdomize');
 
@@ -76,7 +87,6 @@ async function getSelected() {
 			}
 
 			if (snapshot.size == 10) {
-				repeat.style.display = "block";
 				scrumdomize();
 			}
 		});
