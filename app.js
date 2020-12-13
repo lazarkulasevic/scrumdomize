@@ -59,8 +59,15 @@ numbers.addEventListener('click', event => {
 }, {once: true});
 
 repeat.addEventListener('click', () => {
-	if (prompt('Enter password: ') == pass) {
+	if (prompt('Enter password: ') == config.pass) {
 		repeatProcess();
+		let i = 0;
+		let trAll = document.querySelectorAll('tr');
+		let usersDelete = setInterval(() => {
+			!trAll[i] ? clearInterval(usersDelete) :
+			trAll[i].remove();
+			i++;
+		}, 300)
 	} else {
 		alert('Sorry, I can\'t start over.')
 	}
