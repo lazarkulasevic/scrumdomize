@@ -16,7 +16,7 @@ const base = db.collection('scrumdomize');
 
 const form = document.getElementById('form');
 const inputUser = document.getElementById('user');
-const numbers = document.querySelector('.numbers');
+const numbers = document.querySelector('.grid');
 const numAll = document.querySelectorAll('.num');
 const users = document.getElementById('users');
 const repeat = document.getElementById('repeat');
@@ -27,17 +27,22 @@ let user, docID;
 form.addEventListener('submit', event => {
 	event.preventDefault();
 
-	numbers.style.visibility = "visible";
-
 	user = inputUser.value;
 	docID = user + Math.floor(Math.random() * 10000);
 
-	base.doc(docID).set({
-		name: user,
-		number: 0,
-		type: 'person'
-	});
+	console.log(user)
 
+	if (user != "" && user != null && user != undefined) {
+		base.doc(docID).set({
+			name: user,
+			number: 0,
+			type: 'person'
+		});
+	} else {
+		return alert('You must enter your name first.')
+	}
+
+	numbers.style.visibility = "visible";
 	form.style.visibility = "hidden";
 });
 
@@ -53,10 +58,10 @@ numbers.addEventListener('click', event => {
 		base.doc('random').update({
 			random: rnd
 		});
-	}
 
-	selfCleaning();
-}, {once: true});
+		selfCleaning();
+	}
+});
 
 repeat.addEventListener('click', () => {
 	if (prompt('Enter password: ') == config.pass) {
@@ -68,8 +73,6 @@ repeat.addEventListener('click', () => {
 			trAll[i].remove();
 			i++;
 		}, 300)
-	} else {
-		alert('Sorry, I can\'t start over.')
 	}
 });
 
@@ -158,4 +161,3 @@ function repeatProcess() {
 		});
 	});
 }
-
