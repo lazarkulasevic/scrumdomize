@@ -1,5 +1,5 @@
 var config = {
-	apiKey: `${${{ secrets.API_KEY }}}`,
+	apiKey: "AIzaSyC5GnKMLQNaFin_doJVJGKH7wtxjjseOtU",
 	authDomain: "scrumdomize.firebaseapp.com",
 	projectId: "scrumdomize",
 	storageBucket: "scrumdomize.appspot.com",
