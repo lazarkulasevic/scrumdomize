@@ -10,8 +10,7 @@ var config = {
 
 firebase.initializeApp(config);
 
-let db = firebase.firestore();
-
+const db = firebase.firestore();
 const base = db.collection('scrumdomize');
 
 const form = document.getElementById('form');
@@ -30,8 +29,6 @@ form.addEventListener('submit', event => {
 	user = inputUser.value;
 	docID = user + Math.floor(Math.random() * 10000);
 
-	console.log(user)
-
 	if (user != "" && user != null && user != undefined) {
 		base.doc(docID).set({
 			name: user,
@@ -46,10 +43,9 @@ form.addEventListener('submit', event => {
 	form.style.visibility = "hidden";
 });
 
-numbers.addEventListener('click', event => {
+function handleNumberEvent(event) {
 	if (event.target.getAttribute('class').includes('num') 
 	&& !event.target.getAttribute('class').includes('selected')) {
-
 		base.doc(docID).update({
 			number: Number(event.target.textContent)
 		});
@@ -59,9 +55,12 @@ numbers.addEventListener('click', event => {
 			random: rnd
 		});
 
-		selfCleaning();
+		selfCleaning()
+		numbers.removeEventListener('click', handleNumberEvent)
 	}
-});
+}
+
+numbers.addEventListener('click', handleNumberEvent)
 
 repeat.addEventListener('click', () => {
 	if (prompt('Enter password: ') == config.pass) {
